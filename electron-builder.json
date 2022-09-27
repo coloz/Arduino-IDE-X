@@ -1,0 +1,64 @@
+{
+  "appId": "ide.clz.me",
+  "copyright": "lvzhou",
+  "productName": "ide",
+  "asar": false,
+  "directories": {
+    "output": "release/"
+  },
+  "files": [
+    "**/*",
+    "!**/*.ts",
+    "!*.map",
+    "!package.json",
+    "!package-lock.json"
+  ],
+  "extraResources": [
+    {
+      "from": "dist",
+      "to": "app",
+      "filter": [
+        "**/*"
+      ]
+    },
+    {
+      "from": "child",
+      "to": "child",
+      "filter": [
+        "**/*"
+      ]
+    },
+    {
+      "from": "assets",
+      "to": "../assets",
+      "filter": [
+        "**/*"
+      ]
+    }
+  ],
+  "win": {
+    "icon": "dist/assets/icons",
+    "target": [
+      "nsis"
+    ],
+    "publish": {
+      "provider": "generic",
+      "url": "https://b4a.diandeng.tech/update"
+    }
+  },
+  "portable": {
+    "splashImage": "dist/assets/icons/electron.bmp"
+  },
+  "mac": {
+    "icon": "dist/assets/icons",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist/assets/icons",
+    "target": [
+      "AppImage"
+    ]
+  }
+}
